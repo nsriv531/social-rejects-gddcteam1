@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://chisfwtiq61sr"]
+
+[ext_resource type="Script" path="res://scripts/level_select_menu.gd" id="1_hf7p0"]
+
+[node name="level_select_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hf7p0")
+
+[node name="Kindergarten" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="L1" type="Button" parent="Kindergarten"]
+layout_mode = 2
+
+[node name="Grade6" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="L2" type="Button" parent="Grade6"]
+layout_mode = 2
+
+[connection signal="pressed" from="Kindergarten/L1" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="Grade6/L2" to="." method="_on_l_2_pressed"]
+[connection signal="pressed" from="Grade6/L2" to="." method="_on_l_1_pressed"]
