@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://caacq6vcjlskb"]
+
+[sub_resource type="GDScript" id="GDScript_cu0n1"]
+script/source = "extends Node2D
+
+var spawn_positions = 0
+
+var Enemy = preload(\"res://scenes/enemy.tscn\")
+
+func _ready():
+	randomize()
+	spawn_positions = $SpawnerPositions.get_children()
+
+func spawn_enemy():
+	var index = randi() % spawn_positions.size()
+	var enemy = Enemy.instantiate()
+	enemy.global_position = spawn_positions[index].global_position
+	add_child(enemy)
+
+
+func _on_spawn_timer_timeout():
+	spawn_enemy()
+"
+
+[node name="EnemySpawner" type="Node2D"]
+script = SubResource("GDScript_cu0n1")
+
+[node name="SpawnPositions" type="Node2D" parent="."]
+
+[node name="Spawn_01" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(100, 0)
+
+[node name="Spawn_02" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(200, 0)
+
+[node name="Spawn_03" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(300, 0)
+
+[node name="Spawn_04" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(400, 0)
+
+[node name="Spawn_05" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(500, 0)
+
+[node name="Spawn_06" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(600, 0)
+
+[node name="Spawn_07" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(700, 0)
+
+[node name="Spawn_08" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(800, 0)
+
+[node name="Spawn_09" type="Marker2D" parent="SpawnPositions"]
+position = Vector2(900, 0)
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
