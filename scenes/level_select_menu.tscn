@@ -8,21 +8,94 @@ anchors_preset = 0
 script = ExtResource("1_hf7p0")
 
 [node name="Kindergarten" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = 131.0
+offset_top = 140.0
+offset_right = 233.0
+offset_bottom = 173.0
 
 [node name="L1" type="Button" parent="Kindergarten"]
 layout_mode = 2
 
 [node name="Grade6" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+offset_left = 376.0
+offset_top = 141.0
+offset_right = 542.0
+offset_bottom = 304.0
 
 [node name="L2" type="Button" parent="Grade6"]
 layout_mode = 2
+text = "PLaceholder "
+
+[node name="Grade9(miniboss)" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 668.0
+offset_top = 135.0
+offset_right = 834.0
+offset_bottom = 298.0
+
+[node name="L3" type="Button" parent="Grade9(miniboss)"]
+layout_mode = 2
+text = "PLaceholder "
+
+[node name="Grade12" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 166.0
+offset_top = 270.0
+offset_right = 332.0
+offset_bottom = 433.0
+
+[node name="L4" type="Button" parent="Grade12"]
+layout_mode = 2
+text = "PLaceholder "
+
+[node name="Uni(boss)" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 590.0
+offset_top = 264.0
+offset_right = 756.0
+offset_bottom = 427.0
+
+[node name="L5" type="Button" parent="Uni(boss)"]
+layout_mode = 2
+text = "PLaceholder "
+
+[node name="BackButton" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 374.0
+offset_top = 412.0
+offset_right = 540.0
+offset_bottom = 575.0
+
+[node name="Back" type="Button" parent="BackButton"]
+layout_mode = 2
+text = "PLaceholder "
 
 [connection signal="pressed" from="Kindergarten/L1" to="." method="_on_l_1_pressed"]
-[connection signal="pressed" from="Grade6/L2" to="." method="_on_l_2_pressed"]
 [connection signal="pressed" from="Grade6/L2" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="Grade6/L2" to="." method="_on_l_2_pressed"]
+[connection signal="pressed" from="Grade9(miniboss)/L3" to="." method="_on_l_3_pressed"]
+[connection signal="pressed" from="Grade9(miniboss)/L3" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="Grade9(miniboss)/L3" to="." method="_on_l_2_pressed"]
+[connection signal="pressed" from="Grade12/L4" to="." method="_on_l_3_pressed"]
+[connection signal="pressed" from="Grade12/L4" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="Grade12/L4" to="." method="_on_l_2_pressed"]
+[connection signal="pressed" from="Grade12/L4" to="." method="_on_l_4_pressed"]
+[connection signal="pressed" from="Uni(boss)/L5" to="." method="_on_l_5_pressed"]
+[connection signal="pressed" from="Uni(boss)/L5" to="." method="_on_l_3_pressed"]
+[connection signal="pressed" from="Uni(boss)/L5" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="Uni(boss)/L5" to="." method="_on_l_2_pressed"]
+[connection signal="pressed" from="Uni(boss)/L5" to="." method="_on_l_4_pressed"]
+[connection signal="pressed" from="BackButton/Back" to="." method="_on_l_5_pressed"]
+[connection signal="pressed" from="BackButton/Back" to="." method="_on_l_3_pressed"]
+[connection signal="pressed" from="BackButton/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BackButton/Back" to="." method="_on_l_1_pressed"]
+[connection signal="pressed" from="BackButton/Back" to="." method="_on_l_2_pressed"]
+[connection signal="pressed" from="BackButton/Back" to="." method="_on_l_4_pressed"]
